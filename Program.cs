@@ -4,19 +4,21 @@ namespace ReadOnlyVsConst
 {
     public class Program
     {
+        /*
+         * We are not allowed to use static keyword with const.
+         * The below statement is giving error.
+         */
+        static const int x = 5;
+
+        /*
+         * We are allowed to use static keyword with readonly.
+         */
+        static readonly int y = 10;
+
         static void Main(string[] args)
         {
-            /*
-             * We can declare/initialize const variable in methods.
-             */
-            const int x = 5;
 
-            /*
-             * We are not allowed t use readonly inside method. The below statement is giving error.
-             */
-            readonly int y = 10;
-
-            Console.WriteLine(x);
+            Console.WriteLine(y);
         }
     }
 }
